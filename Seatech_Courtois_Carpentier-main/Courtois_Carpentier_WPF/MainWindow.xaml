@@ -1,0 +1,54 @@
+﻿<Window x:Class="Courtois_Carpentier_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Courtois_Carpentier_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="Emission" Header="Emission" Grid.Column="0" Grid.Row="0" Margin="5" >
+            <TextBox x:Name="textBoxEmission" AcceptsReturn="True" TextWrapping="Wrap" KeyUp="textBoxEmission_KeyUp"/>
+        </GroupBox>
+        <GroupBox x:Name="Reception" Header="Reception" Grid.Column="1" Grid.Row="0" Margin="5">
+            <TextBox x:Name="textBoxReception" IsReadOnly="True" TextWrapping="Wrap" BorderBrush="{x:Null}" Background="{x:Null}"/>
+        </GroupBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Button x:Name="buttonEnvoyer" Content="Envoyer" Click="buttonEnvoyer_Click" Width="100" Margin="5"/>
+            <Button x:Name="buttonClear" Content="Clear"  Click="buttonClear_Click" Width="100" Margin="5"/>
+            <Button x:Name="Test"  Content="Test" Click="Test_Click" Width="100" Margin="5"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <GroupBox x:Name="Leds" Header="Leds" VerticalAlignment="Center">
+                <StackPanel Orientation="Vertical" Height ="200">
+                    <CheckBox x:Name="CheckboxLed1" Grid.Column="1" Content="Led1" HorizontalAlignment="Left"  Margin="15"  Grid.Row="5" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="CheckboxLed2" Grid.Column="1" Content="Led2" HorizontalAlignment="Left"  Margin="15" Grid.Row="5" VerticalAlignment="Top" />
+                    <CheckBox x:Name="CheckboxLed3" Grid.Column="1" Content="Led3" HorizontalAlignment="Left"  Margin="15" Grid.Row="5" VerticalAlignment="Top"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox x:Name="TelemetresIR" Header="Télémètres IR" Height="200">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <TextBox x:Name="IRGauche" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="10" Width="150"  Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+                    <TextBox x:Name="IRCentre" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="10" Width="150" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+                    <TextBox x:Name="IRDroit" Grid.Column="1" HorizontalAlignment="Left" Height="20"  Margin="10" Width="150" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  />
+                </StackPanel>
+            </GroupBox>
+            <GroupBox x:Name="Moteurs" Header="Moteurs">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                    <TextBox x:Name="VitesseD" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="20" Grid.Row="5" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" />
+                    <TextBox x:Name="VitesseG" Grid.Column="1" HorizontalAlignment="Left" Height="27" Margin="20" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" />
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
